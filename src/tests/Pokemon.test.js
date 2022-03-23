@@ -5,9 +5,10 @@ import renderWithRouter from '../renderWithRouter';
 import App from '../App';
 
 describe('Teste o componente <Pokemon.js />', () => {
+  const historyPok = '/pokemons/25';
   it('Teste se é renderizado um card com as informações de determinado pokémon.', () => {
     const { history } = renderWithRouter(<App />);
-    history.push('/pokemons/25');
+    history.push(historyPok);
     const namePok = screen.getByTestId(/pokemon-name/i).innerHTML;
     const typePok = screen.getByTestId(/pokemon-type/i).innerHTML;
     const weightPok = screen.getByTestId(/pokemon-weight/i).innerHTML;
@@ -26,12 +27,12 @@ describe('Teste o componente <Pokemon.js />', () => {
     expect(link).toBeDefined();
     userEvent.click(link);
     const { pathname } = history.location;
-    expect(pathname).toBe('/pokemons/25');
+    expect(pathname).toBe(historyPok);
   });
 
   it('Teste se existe um ícone de estrela nos Pokémons favoritados', () => {
     const { history } = renderWithRouter(<App />);
-    history.push('/pokemons/25');
+    history.push(historyPok);
     const favorite = screen.getByRole('checkbox', { name: /Pokémon favoritado?/i });
     userEvent.click(favorite);
     const star = screen.getByAltText(/Pikachu is marked as favorite/i);
