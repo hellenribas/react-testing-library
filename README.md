@@ -12,7 +12,7 @@
 
 ---
 O projeto foi proposto pela Trybe, onde faço curso de desenvolvimento web full stack.
-E todos os arquivos das pastas `components`, `services`, `types` e o arquivo `data` foram criados e desevolvidos pela Trybe.
+E todos os arquivos das pastas `components`, `services`, `types` e o arquivo `data` foram criados e desenvolvidos pela Trybe.
 
 ---
 ## Instalando Dependências
